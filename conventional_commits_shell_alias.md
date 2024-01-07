@@ -1,3 +1,5 @@
+# Alias for making conventional commit easier in cli
+
 # add this into your ~/.bashrc or ~/.zshrc
 
 ```
@@ -20,12 +22,10 @@ gcm() {
 
 ## Without scope
 
-`gcm "feat" "implemented new feature"``
-
-Outputs feat: Implement new feature
+`gcm "feat" "implemented new feature"`
+Outputs: feat: Implement new feature
 
 ## Scoped
 
-`gcm "feat" "Upgraded slf4j version" "commons"``
-
-Outputs feat(commons): Upgraded slf4j version
+`gcm "feat" "Upgraded slf4j version" "commons"`
+Outputs: feat(commons): Upgraded slf4j version
