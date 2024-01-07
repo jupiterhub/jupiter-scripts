@@ -2,6 +2,8 @@
 
 # add this into your ~/.bashrc or ~/.zshrc
 
+# View the latest version @ https://github.com/jupiterhub/jupiter-scripts
+
 ```
 gcm() {
   if [ "$#" -lt 2 ] || [ "$#" -gt 3 ]; then
@@ -23,9 +25,11 @@ gcm() {
 ## Without scope
 
 `gcm "feat" "implemented new feature"`
+
 Outputs: feat: Implement new feature
 
 ## Scoped
 
 `gcm "feat" "Upgraded slf4j version" "commons"`
+
 Outputs: feat(commons): Upgraded slf4j version
