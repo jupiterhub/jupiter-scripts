@@ -1,0 +1,88 @@
+# To use run in terminal:
+#   cat gitconfig_alias >> ~/.gitconfig
+[alias]
+    # ==================================
+    # ||  Staging & Committing Files  ||
+    # ==================================
+    a = add                                 # Stage a file
+    aa = add --all                          # Stage all changes in the repository
+    ap = add --patch                        # Interactively stage parts of files
+    c = commit -v                           # Commit with a verbose diff shown
+    cm = commit -m                          # Commit with an inline message
+    ca = commit -v -a                       # Commit all tracked files (add + commit)
+    cam = commit -am                        # Commit all tracked files with an inline message
+    amend = commit --amend --no-edit        # Add to the last commit without changing the message
+    amendm = commit --amend                 # Add to the last commit and edit the message
+    uns = restore --staged                  # Unstage a file (the modern way)
+
+
+    # ==================================
+    # ||     Branching & Merging      ||
+    # ==================================
+    b = branch                              # List all local branches
+    br = branch -r                          # List all remote-tracking branches
+    bmerged = branch --merged               # List branches that have been merged into the current branch
+    bnotmerged = branch --no-merged         # List branches that have not been merged
+    co = checkout                           # Switch to another branch
+    cb = checkout -b                        # Create and switch to a new branch
+    bd = branch -d                          # Delete a merged local branch
+    bD = branch -D                          # Force delete a local branch
+    rebase = rebase                         # Re-apply commits on top of another base tip
+    ri = rebase -i                          # Begin an interactive rebase
+    rc = rebase --continue                  # Continue a rebase that was paused for conflicts
+    ra = rebase --abort                     # Abort and clean up after a failed rebase
+
+
+    # ==================================
+    # ||     Remote & Network Ops     ||
+    # ==================================
+    f = fetch                               # Fetch changes from a remote
+    l = pull                                # Fetch and integrate with another repository (fetch + merge/rebase)
+    p = push                                # Push committed changes to a remote
+    pf = push --force-with-lease            # Force push safely, ensuring no one else has pushed
+    psu = push --set-upstream origin HEAD   # Push a new branch and set its upstream tracking branch
+    rv = remote -v                          # List remote repositories with their URLs
+    ra = remote add                         # Add a new remote repository
+    rrm = remote rm                         # Remove a remote repository
+    cl = clone                              # Clone a repository into a new directory
+
+
+    # ==================================
+    # ||      History & Logging       ||
+    # ==================================
+    logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    logs = log --stat                       # Show log with stats about file changes
+    lol = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)[%an]%Creset: %s' -n 10
+    last = log -1 HEAD                      # Show the very last commit
+    show = show                             # Show details of a commit, tag, or other git object
+    blame = blame -w                        # Show who last modified each line of a file (ignoring whitespace)
+
+
+    # ==================================
+    # ||      Status & Inspection     ||
+    # ==================================
+    st = status                             # Show the working tree status
+    ss = status -s                          # Show a short, compact status
+    d = diff                                # Show changes between commits, commit and working tree, etc.
+    dc = diff --cached                      # Show changes staged for the next commit
+
+
+    # ==================================
+    # ||        Stash & Cleanup       ||
+    # ==================================
+    sl = stash list                         # List all stashed changes
+    sp = stash pop                          # Apply the most recent stash and then drop it
+    sa = stash apply                        # Apply the most recent stash without dropping it
+    ssv = stash save                        # Stash your changes with a message
+    sd = stash drop                         # Discard the most recent stash
+    spush = stash show -p                   # Show the diff of the most recent stash
+    undo = reset --soft HEAD~1              # Uncommit the last commit, keeping the changes staged
+    reset = reset --hard HEAD               # Discard all local changes and commits, matching HEAD
+    clean = clean -fd                       # Remove all untracked files and directories (USE WITH CAUTION!)
+
+
+    # ==================================
+    # ||      Tagging for Releases    ||
+    # ==================================
+    tag = tag                               # List, create, or delete tags
+    taga = tag -a                           # Create an annotated tag (recommended for releases)
